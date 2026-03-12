@@ -1,15 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using eCommerce.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace eCommerce.Data
 {
     public class ProductDbContext : DbContext
     {
-        public ProductDbContext(DbContextOptions options) : base(options)
+        public ProductDbContext(DbContextOptions options) 
+            : base(options)
         {
 
         }
 
         // Entities to be tracked by DbContext
-        public DbSet<ProductDbContext> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
