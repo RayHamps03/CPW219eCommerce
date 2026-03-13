@@ -43,11 +43,11 @@ public class ProductController : Controller
     }
 
     [HttpGet]
-    public IActionResult Edit(int id)
+    public async Task<IActionResult> Edit(int id)
     {
-        Product? product = _context.Products.
+        Product? product = await _context.Products.
             Where(p => p.ProductId == id)
-            .FirstOrDefault();
+            .FirstOrDefaultAsync();
 
         if (product == null)
         {
