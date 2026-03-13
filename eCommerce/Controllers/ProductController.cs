@@ -71,13 +71,13 @@ public class ProductController : Controller
         return View(product);
     }
 
-    
 
-    public IActionResult Delete(int id)
+    [HttpGet]
+    public async Task<IActionResult> Delete(int id)
     { 
-        Product? product = _context.Products
+        Product? product = await _context.Products
             .Where(p => p.ProductId == id)
-            .FirstOrDefault();
+            .FirstOrDefaultAsync();
 
         if (product == null)
         {
