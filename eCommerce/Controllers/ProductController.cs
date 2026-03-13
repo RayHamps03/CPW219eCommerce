@@ -43,7 +43,6 @@ public class ProductController : Controller
     }
 
     [HttpGet]
-
     public IActionResult Edit(int id)
     {
         Product? product = _context.Products.
