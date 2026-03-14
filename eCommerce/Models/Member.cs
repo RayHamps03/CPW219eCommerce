@@ -13,6 +13,9 @@ public class Member
     /// <summary>
     /// The user inputted username of the member
     /// </summary>
+    [RegularExpression("^[a-zA-Z0-9]+$", 
+        ErrorMessage = "Username must be alphanumeric.")]
+    [StringLength(25)]
     public required string Username { get; set; }
 
     /// <summary>
@@ -23,10 +26,13 @@ public class Member
     /// <summary>
     /// The member's password
     /// </summary>
+    [StringLength(50, MinimumLength = 6, 
+        ErrorMessage = "Password must be between at least 6 to 50")]
     public required string Password { get; set; }
 
     /// <summary>
     /// The date of birth of the member
     /// </summary>
+    
     public DateOnly DateOfBirth { get; set; }
 }
