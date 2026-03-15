@@ -1,6 +1,7 @@
 ﻿using eCommerce.Data;
 using eCommerce.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace eCommerce.Controllers;
 
@@ -43,5 +44,29 @@ public class MemberController : Controller
     public IActionResult Login()
     {
         return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Login(LoginViewModel login)
+    {
+        if (ModelState.IsValid)
+        {
+            // Check if UsernameOrEmail and Password match a member in the database
+            Member? loggedInMember = await _context.Members
+                .Where(m => (m.Username == login.UsernameOrEmail || m.Email == login.UsernameOrEmail) 
+                    && m.Password == login.Password)
+                .SingleOrDefaultAsync();
+
+            if (loggedInMember == null)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid username/email or password.");
+                return View(login);
+            }
+
+            // Log the user in
+
+            return RedirectToAction("Index", "Home");
+        }
+        return View(login);
     }
 }
