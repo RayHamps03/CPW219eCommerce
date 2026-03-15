@@ -7,7 +7,7 @@ of ASP.NET Core MVC (Model-View-Controller).
 This application uses Bootstrap 5 automatically with ASP.NET Core, a web-development framework used to assist in creating fast, responsive websites.
 
 ### CRUD (Create, Retrieve, Update, Delete) functionality with Entity Framework Core
-Entity Framework Core allows this application to work with a database to provide CRUD functionality to this application's entities.
+Entity Framework Core allows this application to work with a database to provide CRUD functionality to this application's entities. <br>
 <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/7c0afbc4-3e3d-4369-850c-0242444546ee" />
 > Image provided by [manubes](https://www.manubes.com/what-is-crud/)
 
