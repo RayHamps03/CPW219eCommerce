@@ -1,0 +1,32 @@
+﻿@model eCommerce.Models.LoginViewModel
+@{
+	ViewData["Title"] = "Login"; 
+}
+
+<h1>Log in to the website</h1>
+
+<div class="row">
+	<div class="col-md-4">
+		<form method="post">
+			<div class="text-danger" asp-validation-summary="All"></div>
+			<div class="form-group">
+				<label asp-for="UsernameOrEmail" class="control-label"></label>
+				<input asp-for="UsernameOrEmail" class="form-control" />
+				<span asp-validation-for="UsernameOrEmail" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Password" class="control-label"></label>
+				<input asp-for="Password" class="form-control" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+
+			<input type="submit" value="Login" class="btn btn-primary" />
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
