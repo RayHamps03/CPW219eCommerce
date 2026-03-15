@@ -38,4 +38,10 @@ public class MemberController : Controller
         }
         return View(register);
     }
+
+    [HttpGet]
+    public IActionResult Login()
+    {
+        return View();
+    }
 }
