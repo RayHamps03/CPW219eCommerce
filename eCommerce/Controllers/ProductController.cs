@@ -45,7 +45,7 @@ public class ProductController : Controller
             await _context.SaveChangesAsync();
 
             // Used to pass data to persist over redirect
-            TempData["Message"] = $"{product.Title} was created successfully.";
+            TempData["Message"] = ($"{product.Title} was created successfully.");
 
             return RedirectToAction(nameof(Index));
         }
@@ -89,7 +89,7 @@ public class ProductController : Controller
             _context.Update(product);
             await _context.SaveChangesAsync();
 
-            TempData["Message"] = $"{product.Title} was updated successfully";
+            TempData["Message"] = ($"{product.Title} was updated successfully");
             return RedirectToAction(nameof(Index));
         }
         return View(product);
