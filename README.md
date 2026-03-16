@@ -25,7 +25,7 @@ The MVC (Model-View-Controller) pattern is used to process data that is passed t
 2) Download .NET 10 SDK
 3) Visual Studio 2026 recommended
 4) Open in VS 2026
-5) Under tools at the top, click 'NuGet Package Manager' > 'Package Manager Console' (Required for full app functionality)
+5) Under tools at the top, click 'NuGet Package Manager' > 'Package Manager Console' (Required for full app functionality) <br>
 <img width="522" height="412" alt="Screenshot 2026-03-13 174557" src="https://github.com/user-attachments/assets/849b2a80-54a9-4cb9-9ce9-532d53c15390" /> <br>
 6) In the Package Manager Console, type the following: <br>
   `Update-Database`
